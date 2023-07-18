@@ -77,7 +77,7 @@ const SignUp = () => {
       return
     }
     try {
-      const { data } = await axios.post("http://localhost:3500/api/user", { name, email, password, pic }, {
+      const { data } = await axios.post("https://mern-chat-talk-backend.onrender.com/api/user", { name, email, password, pic }, {
         headers: {
           "Content-Type": "application/json"
         }

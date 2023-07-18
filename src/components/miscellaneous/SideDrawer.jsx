@@ -51,7 +51,7 @@ const SideDrawer = () => {
         }
       }
 
-      const {data} = await axios.get(`http://localhost:3500/api/user?search=${search}`, config);
+      const {data} = await axios.get(`https://mern-chat-talk-backend.onrender.com/api/user?search=${search}`, config);
       setLoading(false);
       setSearchResult(data);
 
@@ -75,7 +75,7 @@ const SideDrawer = () => {
           Authorization:`Bearer ${user.token}`
         }
       };
-      const {data} = await axios.post("http://localhost:3500/api/chat",{userId},config)
+      const {data} = await axios.post("https://mern-chat-talk-backend.onrender.com/api/chat",{userId},config)
       console.log(data);
 
       if(!chats.find(c=>c._id ===data._id)) setChats([data,...chats])

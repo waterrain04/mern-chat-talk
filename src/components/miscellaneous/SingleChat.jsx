@@ -13,7 +13,7 @@ import io from 'socket.io-client'
 import Lottie from 'react-lottie'
 import animationData from '../../animation/typing.json'
 
-const ENDPOINT = "http://localhost:3500";
+const ENDPOINT = "https://mern-chat-talk-backend.onrender.com";
 var socket,selectedChatCompare;
 
 const SingleChat = ({fetchAgain,setFetchAgain}) => {
@@ -37,7 +37,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
         }}
         setLoading(true);
 
-        const {data} = await axios.get(`http://localhost:3500/api/message/${selectedChat._id}`,config);
+        const {data} = await axios.get(`https://mern-chat-talk-backend.onrender.com/api/message/${selectedChat._id}`,config);
         setMessages(data);
         setLoading(false);
 
@@ -67,7 +67,7 @@ const SingleChat = ({fetchAgain,setFetchAgain}) => {
           }
         }
         setNewMessage("");
-        const {data} = await axios.post('http://localhost:3500/api/message',{
+        const {data} = await axios.post('https://mern-chat-talk-backend.onrender.com/api/message',{
           content:newMessage,
           chatId: selectedChat._id
         },config)
