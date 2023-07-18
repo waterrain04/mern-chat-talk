@@ -29,7 +29,7 @@ const LogIn = () => {
       return;
     }
     try {
-      const { data } = await axios.post("https://mern-chat-talk-backend.onrender.com/user/login", {  email, password }, {
+      const { data } = await axios.post("https://mern-chat-talk-backend.onrender.com/api/user/login", {email, password }, {
         headers: {
           "Content-Type": "application/json"
         }
